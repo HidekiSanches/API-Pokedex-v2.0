@@ -6,5 +6,5 @@ CREATE TABLE move (
     accuracy INT NOT NULL,
     pp INT NOT NULL,
     effect VARCHAR(50) NOT NULL,
-    type_fk binary(16) NOT NULL
+    type_fk VARCHAR(36) NOT NULL
 )

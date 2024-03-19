@@ -10,7 +10,7 @@ import java.util.UUID;
 public class PokemonModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "pokemon_id", length = 16, columnDefinition = "uuid")
+    @Column(name = "pokemon_id", length = 36, columnDefinition = "uuid")
     private UUID pokemonId;
     @Column(name = "no_pokedex", length = 50, nullable = false)
     private int noPokedex;

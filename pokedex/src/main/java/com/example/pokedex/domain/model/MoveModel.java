@@ -9,7 +9,7 @@ import java.util.UUID;
 public class MoveModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "move_id", length = 16, columnDefinition = "uuid")
+    @Column(name = "move_id", length = 36, columnDefinition = "uuid")
     private UUID moveId;
     @Column(name = "name", length = 100, nullable = false)
     private String name;

@@ -9,20 +9,23 @@ import java.util.UUID;
 public class NatureModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "nature_id", length = 16, columnDefinition = "uuid")
+    @Column(name = "nature_id", length = 36, columnDefinition = "uuid")
     private UUID natureId;
     @Column(name = "name", length = 100, nullable = false)
     private String name;
-    @Column(name = "description", length = 200, nullable = false)
-    private String description;
+    @Column(name = "increases", length = 50, nullable = false)
+    private String increases;
+    @Column(name = "decreases", length = 50, nullable = false)
+    private String decreases;
 
     public NatureModel() {
     }
 
-    public NatureModel(UUID natureId, String name, String description) {
+    public NatureModel(UUID natureId, String name, String increases, String decreases) {
         this.natureId = natureId;
         this.name = name;
-        this.description = description;
+        this.increases = increases;
+        this.decreases = decreases;
     }
 
     public UUID getNatureId() {
@@ -41,11 +44,15 @@ public class NatureModel {
         this.name = name;
     }
 
-    public String get() {
-        return description;
+    public String getIncreases() {
+        return increases;
     }
 
-    public void set(String description) {
-        this.description = description;
+    public void setIncreases(String increases) {
+        this.increases = increases;
     }
+
+    public String getDecreases() { return decreases; }
+
+    public void setDecreases(String decreases) { this.decreases = decreases; }
 }

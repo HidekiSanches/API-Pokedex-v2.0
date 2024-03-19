@@ -10,7 +10,7 @@ import java.util.UUID;
 public class TypeModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "type_id", length = 16, columnDefinition = "uuid")
+    @Column(name = "type_id", length = 36, columnDefinition = "uuid")
     private UUID typeId;
     @Column(name = "type1", length = 50, nullable = false)
     private String type1;

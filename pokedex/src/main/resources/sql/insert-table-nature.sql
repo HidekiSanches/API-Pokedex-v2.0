@@ -1,0 +1,28 @@
+INSERT INTO nature (nature_id, name, increases, decreases) VALUES
+(UUID(), 'Adamant', 'Attack', 'Sp. Atk'),
+(UUID(), 'Bashful', 'Sp. Atk', 'Sp. Atk'),
+(UUID(), 'Bold', 'Defense', 'Attack'),
+(UUID(), 'Brave', 'Attack', 'Speed'),
+(UUID(), 'Calm', 'Sp. Def', 'Attack'),
+(UUID(), 'Careful', 'Sp. Def', 'Sp. Atk'),
+(UUID(), 'Docile', 'Defense', 'Defense'),
+(UUID(), 'Gentle', 'Sp. Def', 'Defense'),
+(UUID(), 'Hardy', 'Attack', 'Attack'),
+(UUID(), 'Hasty', 'Speed', 'Defense'),
+(UUID(), 'Impish', 'Defense', 'Sp. Atk'),
+(UUID(), 'Jolly', 'Speed', 'Sp. Atk'),
+(UUID(), 'Lax', 'Defense', 'Sp. Def'),
+(UUID(), 'Lonely', 'Attack', 'Defense'),
+(UUID(), 'Mild', 'Sp. Atk', 'Defense'),
+(UUID(), 'Modest', 'Sp. Atk', 'Attack'),
+(UUID(), 'Naive', 'Speed', 'Sp. Def'),
+(UUID(), 'Naughty', 'Attack', 'Sp. Def'),
+(UUID(), 'Quiet', 'Sp. Atk', 'Speed'),
+(UUID(), 'Quirky', 'Sp. Def', 'Sp. Def'),
+(UUID(), 'Rash', 'Sp. Atk', 'Sp. Def'),
+(UUID(), 'Relaxed', 'Defense', 'Speed'),
+(UUID(), 'Sassy', 'Sp. Def', 'Speed'),
+(UUID(), 'Serious', 'Speed', 'Speed'),
+(UUID(), 'Timid', 'Speed', 'Attack');
+
+SELECT * FROM nature;
