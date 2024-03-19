@@ -10,61 +10,54 @@ import java.util.UUID;
 public class PokemonModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "id_pokemon", length = 16, columnDefinition = "uuid")
-    private UUID IdPokemon;
+    @Column(name = "pokemon_id", length = 16, columnDefinition = "uuid")
+    private UUID pokemonId;
     @Column(name = "no_pokedex", length = 50, nullable = false)
     private int noPokedex;
     @Column(name = "name", length = 100, nullable = false)
     private String name;
     @ManyToOne
-    @JoinColumn(name = "fkType", referencedColumnName = "id_type")
+    @JoinColumn(name = "type_fk", referencedColumnName = "type_id")
     private TypeModel types;
     @Column(name = "description", length = 200, nullable = false)
     private String description;
     @ManyToOne
-    @JoinColumn(name = "fkAbility", referencedColumnName = "id_ability")
+    @JoinColumn(name = "ability_fk", referencedColumnName = "ability_id")
     private AbilityModel ability;
     @ManyToOne
-    @JoinColumn(name = "fkNature", referencedColumnName = "id_nature")
+    @JoinColumn(name = "nature_fk", referencedColumnName = "nature_id")
     private NatureModel nature;
-    @Column(name = "hp", length = 50, nullable = false)
-    private String hp;
-    @Column(name = "attack", length = 50, nullable = false)
-    private String attack;
-    @Column(name = "defense", length = 50, nullable = false)
-    private String defense;
-    @Column(name = "sp_attack", length = 50, nullable = false)
-    private String spAttack;
-    @Column(name = "sp_defense", length = 50, nullable = false)
-    private String spDefense;
-    @OneToMany(mappedBy = "pokemon")
+    @OneToOne
+    @JoinColumn(name = "stats_fk")
+    private StatsModel stats;
+    @ManyToMany
+    @JoinTable(
+            name = "Pokemon_Move",
+            joinColumns = @JoinColumn(name = "pokemon_id"),
+            inverseJoinColumns = @JoinColumn(name = "move_id")
+    )
     private List<MoveModel> moves;
 
     public PokemonModel() {
     }
 
-    public PokemonModel(UUID idPokemon, int noPokedex, String name, TypeModel types, String description, AbilityModel ability, NatureModel nature, String hp, String attack, String defense, String spAttack, String spDefense, List<MoveModel> moves) {
-        this.IdPokemon = idPokemon;
+    public PokemonModel(UUID pokemonId, int noPokedex, String name, TypeModel types, String description, AbilityModel ability, NatureModel nature, List<MoveModel> moves) {
+        this.pokemonId = pokemonId;
         this.noPokedex = noPokedex;
         this.name = name;
         this.types = types;
         this.description = description;
         this.ability = ability;
         this.nature = nature;
-        this.hp = hp;
-        this.attack = attack;
-        this.defense = defense;
-        this.spAttack = spAttack;
-        this.spDefense = spDefense;
         this.moves = moves;
     }
 
-    public UUID getIdPokemon() {
-        return IdPokemon;
+    public UUID getPokemonId() {
+        return pokemonId;
     }
 
-    public void setIdPokemon(UUID idPokemon) {
-        this.IdPokemon = idPokemon;
+    public void setPokemonId(UUID pokemonId) {
+        this.pokemonId = pokemonId;
     }
 
     public int getNoPokedex() {
@@ -113,46 +106,6 @@ public class PokemonModel {
 
     public void setNature(NatureModel nature) {
         this.nature = nature;
-    }
-
-    public String getHp() {
-        return hp;
-    }
-
-    public void setHp(String hp) {
-        this.hp = hp;
-    }
-
-    public String getAttack() {
-        return attack;
-    }
-
-    public void setAttack(String attack) {
-        this.attack = attack;
-    }
-
-    public String getDefense() {
-        return defense;
-    }
-
-    public void setDefense(String defense) {
-        this.defense = defense;
-    }
-
-    public String getSpAttack() {
-        return spAttack;
-    }
-
-    public void setSpAttack(String spAttack) {
-        this.spAttack = spAttack;
-    }
-
-    public String getSpDefense() {
-        return spDefense;
-    }
-
-    public void setSpDefense(String spDefense) {
-        this.spDefense = spDefense;
     }
 
     public List<MoveModel> getMoves() {

@@ -9,8 +9,8 @@ import java.util.UUID;
 public class NatureModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "id_nature", length = 16, columnDefinition = "uuid")
-    private UUID idNature;
+    @Column(name = "nature_id", length = 16, columnDefinition = "uuid")
+    private UUID natureId;
     @Column(name = "name", length = 100, nullable = false)
     private String name;
     @Column(name = "description", length = 200, nullable = false)
@@ -19,18 +19,18 @@ public class NatureModel {
     public NatureModel() {
     }
 
-    public NatureModel(UUID idNature, String name, String description) {
-        this.idNature = idNature;
+    public NatureModel(UUID natureId, String name, String description) {
+        this.natureId = natureId;
         this.name = name;
         this.description = description;
     }
 
-    public UUID getIdNature() {
-        return idNature;
+    public UUID getNatureId() {
+        return natureId;
     }
 
-    public void setIdNuture(UUID idNature) {
-        this.idNature = idNature;
+    public void setNatureId(UUID natureId) {
+        this.natureId = natureId;
     }
 
     public String getName() {

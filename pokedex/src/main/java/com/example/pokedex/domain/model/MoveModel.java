@@ -9,12 +9,12 @@ import java.util.UUID;
 public class MoveModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "id_move", length = 16, columnDefinition = "uuid")
-    private UUID idMove;
+    @Column(name = "move_id", length = 16, columnDefinition = "uuid")
+    private UUID moveId;
     @Column(name = "name", length = 100, nullable = false)
     private String name;
     @OneToOne
-    @JoinColumn(name = "fkType", referencedColumnName = "id_type")
+    @JoinColumn(name = "type_fk", referencedColumnName = "type_id")
     private TypeModel type;
     @Column(name = "category", length = 50, nullable = false)
     private String category;
@@ -30,8 +30,8 @@ public class MoveModel {
     public MoveModel() {
     }
 
-    public MoveModel(UUID idMove, String name, TypeModel type, String category, int power, int accuracy, int pp, String effect) {
-        this.idMove = idMove;
+    public MoveModel(UUID moveId, String name, TypeModel type, String category, int power, int accuracy, int pp, String effect) {
+        this.moveId = moveId;
         this.name = name;
         this.type = type;
         this.category = category;
@@ -41,12 +41,12 @@ public class MoveModel {
         this.effect = effect;
     }
 
-    public UUID getIdMove() {
-        return idMove;
+    public UUID getMoveId() {
+        return moveId;
     }
 
-    public void setIdMove(UUID idMove) {
-        this.idMove = idMove;
+    public void setMoveId(UUID moveId) {
+        this.moveId = moveId;
     }
 
     public String getName() {

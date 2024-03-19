@@ -9,8 +9,8 @@ import java.util.UUID;
 public class AbilityModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "id_ability", length = 16, columnDefinition = "uuid")
-    private UUID idAbility;
+    @Column(name = "ability_id", length = 16, columnDefinition = "uuid")
+    private UUID abilityId;
     @Column(name = "name", length = 100, nullable = false)
     private String name;
     @Column(name = "effect", length = 50, nullable = false)
@@ -19,18 +19,18 @@ public class AbilityModel {
     public AbilityModel() {
     }
 
-    public AbilityModel(UUID idAbility,String name, String effect) {
-        this.idAbility = idAbility;
+    public AbilityModel(UUID abilityId,String name, String effect) {
+        this.abilityId = abilityId;
         this.name = name;
         this.effect = effect;
     }
 
-    public UUID getIdAbility() {
-        return idAbility;
+    public UUID getAbilityId() {
+        return abilityId;
     }
 
-    public void setIdAbility(UUID idAbility) {
-        this.idAbility = idAbility;
+    public void setAbilityId(UUID abilityId) {
+        this.abilityId = abilityId;
     }
 
     public String getEffect() {

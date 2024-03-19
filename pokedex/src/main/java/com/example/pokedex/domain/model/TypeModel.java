@@ -10,8 +10,8 @@ import java.util.UUID;
 public class TypeModel {
     @Id
     @GeneratedValue(generator = "uuid")
-    @Column(name = "id_type", length = 16, columnDefinition = "uuid")
-    private UUID idType;
+    @Column(name = "type_id", length = 16, columnDefinition = "uuid")
+    private UUID typeId;
     @Column(name = "type1", length = 50, nullable = false)
     private String type1;
     @Column(name = "type2", length = 50, nullable = false)
@@ -20,18 +20,18 @@ public class TypeModel {
     public TypeModel() {
     }
 
-    public TypeModel(UUID idType, String type1, String type2) {
-        this.idType = idType;
+    public TypeModel(UUID typeId, String type1, String type2) {
+        this.typeId = typeId;
         this.type1 = type1;
         this.type2 = type2;
     }
 
-    public UUID getIdType() {
-        return idType;
+    public UUID getTypeId() {
+        return typeId;
     }
 
-    public void setIdType(UUID idType) {
-        this.idType = idType;
+    public void setTypeId(UUID typeId) {
+        this.typeId = typeId;
     }
 
     public String getType1() {

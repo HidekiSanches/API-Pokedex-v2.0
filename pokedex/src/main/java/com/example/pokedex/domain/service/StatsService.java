@@ -3,5 +3,5 @@ package com.example.pokedex.domain.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NatureService {
+public class StatsService {
 }
