@@ -27,6 +27,17 @@ public class TypeService {
         return dtoType;
     }
 
+    public List<DadosTypeCompleto> findAllByType(String type) {
+        List<TypeModel> listType = typeRepository.findAllByType1ContainingOrType2Containing(type, type);
+        List<DadosTypeCompleto> dtoType = new ArrayList<>();
+
+        for (TypeModel types : listType) {
+            dtoType.add(mapToDadosTypeCompleto(types));
+        }
+
+        return dtoType;
+    }
+
     private DadosTypeCompleto mapToDadosTypeCompleto(TypeModel type) {
         DadosTypeCompleto dto = new DadosTypeCompleto();
         dto.setId(type.getTypeId());
